@@ -2,9 +2,9 @@
 <resources>
     <declare-styleable name="LiquidTabBarView">
         <attr name="backgroundTint" format="color" />
-        <attr name="liquidTabItemRadius" format="dimension" />
-        <attr name="liquidTabVerticalOffset" format="dimension" />
-        <attr name="liquidTabCornerRadius" format="dimension" />
+        <attr name="liquidNavbarItemRadius" format="dimension" />
+        <attr name="liquidNavbarVerticalOffset" format="dimension" />
+        <attr name="liquidNavbarCornerRadius" format="dimension" />
     </declare-styleable>
 
     <declare-styleable name="CustomBottomNavigationView">

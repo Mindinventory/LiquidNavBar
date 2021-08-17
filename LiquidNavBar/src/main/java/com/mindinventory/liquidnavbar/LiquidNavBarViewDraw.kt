@@ -11,9 +11,9 @@ import com.google.android.material.shape.ShapePath
 class LiquidNavBarViewDraw(
 
     private val bottomNavigationMenuView: BottomNavigationMenuView,
-    var liquidTabItemRadius: Float,
-    var liquidTabVerticalOffset: Float,
-    var liquidTabCornerRadius: Float
+    var liquidNavbarItemRadius: Float,
+    var liquidNavbarVerticalOffset: Float,
+    var liquidNavbarCornerRadius: Float
 ) : EdgeTreatment() {
     private lateinit var magicPath: MagicPath
 
@@ -27,21 +27,21 @@ class LiquidNavBarViewDraw(
         shapePath: ShapePath
     ) {
         magicPath =
-            MagicPath.create(0f, liquidTabVerticalOffset, length, liquidTabVerticalOffset)
+            MagicPath.create(0f, liquidNavbarVerticalOffset, length, liquidNavbarVerticalOffset)
 
         bottomNavigationMenuView.forEachIndexed { i, view ->
             var liquidTabHeightOffset = 0f
 
 
             if (i == selectedItem) {
-                liquidTabHeightOffset = interpolation * liquidTabVerticalOffset
+                liquidTabHeightOffset = interpolation * liquidNavbarVerticalOffset
             }
             val itemRect = view.globalVisibleRect
 
-            val centerRadius = liquidTabItemRadius
-            val borderRadius = liquidTabCornerRadius
+            val centerRadius = liquidNavbarItemRadius
+            val borderRadius = liquidNavbarCornerRadius
             val centerX = itemRect.centerX().toFloat()
-            val centerY = liquidTabVerticalOffset + centerRadius - liquidTabHeightOffset
+            val centerY = liquidNavbarVerticalOffset + centerRadius - liquidTabHeightOffset
 
             val centerCircle =
                 MagicPath.CircleShape(
@@ -53,7 +53,7 @@ class LiquidNavBarViewDraw(
 
             val leftCircle = MagicPath.CircleShape(
                 centerX,
-                liquidTabVerticalOffset - borderRadius,
+                liquidNavbarVerticalOffset - borderRadius,
                 borderRadius,
                 MagicPath.PathDirection.C_CLOCKWISE
             )
@@ -61,7 +61,7 @@ class LiquidNavBarViewDraw(
 
             val rightCircle = MagicPath.CircleShape(
                 centerX,
-                liquidTabVerticalOffset - borderRadius,
+                liquidNavbarVerticalOffset - borderRadius,
                 borderRadius,
                 MagicPath.PathDirection.C_CLOCKWISE
             )

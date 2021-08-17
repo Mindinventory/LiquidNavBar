@@ -98,23 +98,23 @@ class LiquidNavBar(context: Context, attrs: AttributeSet?) :
         when (position) {
             0 -> {
                 binding!!.icon1.translationY =
-                    (-binding!!.bottomNavigationView.liquidTabVerticalOffset * value) - 19f
+                    (-binding!!.bottomNavigationView.liquidNavbarVerticalOffset * value) - 19f
             }
             1 -> {
                 binding!!.icon2.translationY =
-                    (-binding!!.bottomNavigationView.liquidTabVerticalOffset * value) - 19f
+                    (-binding!!.bottomNavigationView.liquidNavbarVerticalOffset * value) - 19f
             }
             2 -> {
                 binding!!.icon3.translationY =
-                    (-binding!!.bottomNavigationView.liquidTabVerticalOffset * value) - 19f
+                    (-binding!!.bottomNavigationView.liquidNavbarVerticalOffset * value) - 19f
             }
             3 -> {
                 binding!!.icon4.translationY =
-                    (-binding!!.bottomNavigationView.liquidTabVerticalOffset * value) - 19f
+                    (-binding!!.bottomNavigationView.liquidNavbarVerticalOffset * value) - 19f
             }
             4 -> {
                 binding!!.icon5.translationY =
-                    (-binding!!.bottomNavigationView.liquidTabVerticalOffset * value) - 19f
+                    (-binding!!.bottomNavigationView.liquidNavbarVerticalOffset * value) - 19f
             }
         }
     }
@@ -125,23 +125,23 @@ class LiquidNavBar(context: Context, attrs: AttributeSet?) :
         when (position) {
             0 -> {
                 binding!!.icon1.translationY =
-                    -binding!!.bottomNavigationView.liquidTabVerticalOffset * value
+                    -binding!!.bottomNavigationView.liquidNavbarVerticalOffset * value
             }
             1 -> {
                 binding!!.icon2.translationY =
-                    -binding!!.bottomNavigationView.liquidTabVerticalOffset * value
+                    -binding!!.bottomNavigationView.liquidNavbarVerticalOffset * value
             }
             2 -> {
                 binding!!.icon3.translationY =
-                    -binding!!.bottomNavigationView.liquidTabVerticalOffset * value
+                    -binding!!.bottomNavigationView.liquidNavbarVerticalOffset * value
             }
             3 -> {
                 binding!!.icon4.translationY =
-                    -binding!!.bottomNavigationView.liquidTabVerticalOffset * value
+                    -binding!!.bottomNavigationView.liquidNavbarVerticalOffset * value
             }
             4 -> {
                 binding!!.icon5.translationY =
-                    -binding!!.bottomNavigationView.liquidTabVerticalOffset * value
+                    -binding!!.bottomNavigationView.liquidNavbarVerticalOffset * value
             }
         }
     }

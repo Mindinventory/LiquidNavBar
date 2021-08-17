@@ -30,26 +30,26 @@ class LiquidNavBarView : BottomNavigationView, NavigationBarView.OnItemSelectedL
     private var selectionAnimator: ValueAnimator? = null
     private var deselectAnimator: ValueAnimator? = null
 
-    private var liquidTabItemRadius: Float = 0f
+    private var liquidNavbarItemRadius: Float = 0f
         set(radius) {
             field = radius
-            topEdgeTreatment.liquidTabItemRadius = radius
+            topEdgeTreatment.liquidNavbarItemRadius = radius
             invalidate()
         }
 
-    private var liquidTabCornerRadius: Float = 0f
+    private var liquidNavbarCornerRadius: Float = 0f
         set(radius) {
             field = radius
-            topEdgeTreatment.liquidTabCornerRadius = radius
+            topEdgeTreatment.liquidNavbarCornerRadius = radius
             invalidate()
         }
 
-    var liquidTabVerticalOffset: Float = 0f
+    var liquidNavbarVerticalOffset: Float = 0f
         set(offset) {
             field = offset
-            topEdgeTreatment.liquidTabVerticalOffset = offset
+            topEdgeTreatment.liquidNavbarVerticalOffset = offset
             if (layoutParams != null) {
-                layoutParams.height = (height + liquidTabVerticalOffset).toInt()
+                layoutParams.height = (height + liquidNavbarVerticalOffset).toInt()
             }
 
             invalidate()
@@ -73,16 +73,16 @@ class LiquidNavBarView : BottomNavigationView, NavigationBarView.OnItemSelectedL
         val backgroundTint =
             a.getColor(R.styleable.LiquidTabBarView_backgroundTint, typedValue.data)
 
-        val liquidTabItemRadius = a.getDimensionPixelSize(
-            R.styleable.LiquidTabBarView_liquidTabItemRadius,
+        val liquidNavbarItemRadius = a.getDimensionPixelSize(
+            R.styleable.LiquidTabBarView_liquidNavbarItemRadius,
             dpToPx(64f).toInt()
         ).toFloat()
-        val liquidTabVerticalOffset = a.getDimensionPixelSize(
-            R.styleable.LiquidTabBarView_liquidTabVerticalOffset,
+        val liquidNavbarVerticalOffset = a.getDimensionPixelSize(
+            R.styleable.LiquidTabBarView_liquidNavbarVerticalOffset,
             dpToPx(8f).toInt()
         ).toFloat()
-        val liquidTabCornerRadius = a.getDimensionPixelSize(
-            R.styleable.LiquidTabBarView_liquidTabCornerRadius,
+        val liquidNavbarCornerRadius = a.getDimensionPixelSize(
+            R.styleable.LiquidTabBarView_liquidNavbarCornerRadius,
             dpToPx(128f).toInt()
         ).toFloat()
         a.recycle()
@@ -93,14 +93,14 @@ class LiquidNavBarView : BottomNavigationView, NavigationBarView.OnItemSelectedL
 
         topEdgeTreatment = LiquidNavBarViewDraw(
             bottomNavigationMenuView,
-            liquidTabItemRadius,
-            liquidTabVerticalOffset,
-            liquidTabCornerRadius
+            liquidNavbarItemRadius,
+            liquidNavbarVerticalOffset,
+            liquidNavbarCornerRadius
         )
 
-        this.liquidTabItemRadius = liquidTabItemRadius
-        this.liquidTabVerticalOffset = liquidTabVerticalOffset
-        this.liquidTabCornerRadius = liquidTabCornerRadius
+        this.liquidNavbarItemRadius = liquidNavbarItemRadius
+        this.liquidNavbarVerticalOffset = liquidNavbarVerticalOffset
+        this.liquidNavbarCornerRadius = liquidNavbarCornerRadius
 
         val shapePathModel = ShapeAppearanceModel().toBuilder().setTopEdge(topEdgeTreatment).build()
         materialShapeDrawable = MaterialShapeDrawable(shapePathModel)
@@ -170,7 +170,7 @@ class LiquidNavBarView : BottomNavigationView, NavigationBarView.OnItemSelectedL
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         // Change height
-        layoutParams.height = (height + liquidTabVerticalOffset).toInt()
+        layoutParams.height = (height + liquidNavbarVerticalOffset).toInt()
     }
 
     override fun setOnItemSelectedListener(listener: OnItemSelectedListener?) {
