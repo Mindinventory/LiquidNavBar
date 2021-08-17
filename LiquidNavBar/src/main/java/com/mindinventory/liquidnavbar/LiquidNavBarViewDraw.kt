@@ -31,8 +31,6 @@ class LiquidNavBarViewDraw(
 
         bottomNavigationMenuView.forEachIndexed { i, view ->
             var liquidTabHeightOffset = 0f
-
-
             if (i == selectedItem) {
                 liquidTabHeightOffset = interpolation * liquidNavbarVerticalOffset
             }

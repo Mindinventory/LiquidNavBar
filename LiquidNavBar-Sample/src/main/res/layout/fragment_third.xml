@@ -1,17 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ThirdFragment"
-    android:background="@color/colorViolet">
+    android:background="@color/bg"
+    android:orientation="vertical"
+    tools:context=".FirstFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/man" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Nikhil"
+                    android:textColor="@color/colorViolet"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/card"
+                    app:layout_constraintTop_toTopOf="@id/card" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="India"
+                    android:textColor="@color/colorViolet"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@id/card"
+                    app:layout_constraintTop_toBottomOf="@id/name" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Follow"
+                    android:textColor="@color/colorViolet"
+                    app:cornerRadius="10dp"
+                    app:layout_constraintBottom_toBottomOf="@id/card"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/card"
+                    app:strokeColor="@color/colorViolet" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/card">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/one" />
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginHorizontal="16dp"-->
+            <!--                android:layout_marginTop="10dp">-->
+
+            <!--                <androidx.cardview.widget.CardView-->
+            <!--                    android:id="@+id/card"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    app:cardCornerRadius="10dp"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="parent"-->
+            <!--                    tools:ignore="DuplicateIds">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:layout_width="40dp"-->
+            <!--                        android:layout_height="40dp"-->
+            <!--                        android:src="@drawable/man" />-->
+
+            <!--                </androidx.cardview.widget.CardView>-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/name"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginStart="10dp"-->
+            <!--                    android:text="Nkgohil"-->
+            <!--                    android:textColor="@color/colorViolet"-->
+            <!--                    android:textSize="14sp"-->
+            <!--                    android:textStyle="bold"-->
+            <!--                    app:layout_constraintStart_toEndOf="@id/card"-->
+            <!--                    app:layout_constraintTop_toTopOf="@id/card"-->
+            <!--                    tools:ignore="DuplicateIds" />-->
+
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginStart="10dp"-->
+            <!--                    android:text="India"-->
+            <!--                    android:textColor="@color/colorViolet"-->
+            <!--                    android:textSize="12sp"-->
+            <!--                    app:layout_constraintStart_toEndOf="@id/card"-->
+            <!--                    app:layout_constraintTop_toBottomOf="@id/name" />-->
+
+            <!--                <com.google.android.material.button.MaterialButton-->
+            <!--                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="Follow"-->
+            <!--                    android:textColor="@color/colorViolet"-->
+            <!--                    app:cornerRadius="10dp"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="@id/card"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="@id/card"-->
+            <!--                    app:strokeColor="@color/colorViolet" />-->
+
+            <!--                <androidx.cardview.widget.CardView-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginTop="10dp"-->
+            <!--                    app:cardCornerRadius="10dp"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                    app:layout_constraintTop_toBottomOf="@id/card">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="220dp"-->
+            <!--                        android:scaleType="centerCrop"-->
+            <!--                        android:src="@drawable/three" />-->
+            <!--                </androidx.cardview.widget.CardView>-->
+            <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+            <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginHorizontal="16dp"-->
+            <!--                android:layout_marginTop="10dp">-->
+
+            <!--                <androidx.cardview.widget.CardView-->
+            <!--                    android:id="@+id/card"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    app:cardCornerRadius="10dp"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="parent"-->
+            <!--                    tools:ignore="DuplicateIds">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:layout_width="40dp"-->
+            <!--                        android:layout_height="40dp"-->
+            <!--                        android:src="@drawable/man" />-->
+
+            <!--                </androidx.cardview.widget.CardView>-->
+
+            <!--                <TextView-->
+            <!--                    android:id="@+id/name"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginStart="10dp"-->
+            <!--                    android:text="Nkgohil007"-->
+            <!--                    android:textColor="@color/colorViolet"-->
+            <!--                    android:textSize="14sp"-->
+            <!--                    android:textStyle="bold"-->
+            <!--                    app:layout_constraintStart_toEndOf="@id/card"-->
+            <!--                    app:layout_constraintTop_toTopOf="@id/card"-->
+            <!--                    tools:ignore="DuplicateIds" />-->
+
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginStart="10dp"-->
+            <!--                    android:text="India"-->
+            <!--                    android:textColor="@color/colorViolet"-->
+            <!--                    android:textSize="12sp"-->
+            <!--                    app:layout_constraintStart_toEndOf="@id/card"-->
+            <!--                    app:layout_constraintTop_toBottomOf="@id/name" />-->
+
+            <!--                <com.google.android.material.button.MaterialButton-->
+            <!--                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="Following"-->
+            <!--                    android:textColor="@color/colorViolet"-->
+            <!--                    app:cornerRadius="10dp"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="@id/card"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="@id/card"-->
+            <!--                    app:strokeColor="@color/colorViolet" />-->
+
+            <!--                <androidx.cardview.widget.CardView-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginTop="10dp"-->
+            <!--                    app:cardCornerRadius="10dp"-->
+            <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                    app:layout_constraintTop_toBottomOf="@id/card">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="220dp"-->
+            <!--                        android:scaleType="centerCrop"-->
+            <!--                        android:src="@drawable/four" />-->
+            <!--                </androidx.cardview.widget.CardView>-->
+            <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 
-    <ImageView
-        android:textColor="@android:color/white"
-        android:layout_gravity="center"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/map" />
-
-</FrameLayout>
+</LinearLayout>

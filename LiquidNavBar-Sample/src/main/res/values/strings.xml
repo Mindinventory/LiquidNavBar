@@ -6,4 +6,11 @@
     <string name="value_dp">%ddp</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="liquidnavbar">Liquid Navbar</string>
+    <string name="txt1">When a city’s population triples in twenty years’ time, essential services need extra attention. In the case of Hanoi – Vietnam’s sprawling capital and Northern cultural anchor – preserving lush green space alongside economic growth requires collaborative, deliberate efforts. Improving green spaces is vital to Hanoi’s future. Greenery has innumerable benefits to city dwellers that</string>
+    <string name="txt2">"When the whole world agrees to keep temperature from rising beyond 1.5 degrees Celsius, how, exactly, is one city supposed to act?  This question is at the heart of Ambitious City Promises (ACP), a 4.5 year-long project aiming to actualize the Paris Agreement’s high-level goals for local governments in Southeast Asia. Frameworks to bring global "</string>
+    <string name="notification">Notification</string>
+    <string name="privacy">Privacy</string>
+    <string name="ads">Ads</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="logout">Logout</string>
 </resources>
