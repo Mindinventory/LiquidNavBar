@@ -1,6 +1,6 @@
-# LiquidNavBar
+# Liquid Navbar
 
-* LiquidNavBar Provides a bottom navigation view with liquid animation.
+* Liquid Navbar Provides a bottom navigation view with liquid animation.
 
   ![ezgif.com-gif-maker__3_](/media/LiquidNavbarGif.gif)
 
@@ -33,7 +33,7 @@
 
 ### Implementation
 
-* Step 1. Add LiquidTabBar in to your activity_main.xml:
+* Step 1. Add Liquid Navbar in to your activity_main.xml:
 
 ```xml
 
@@ -63,7 +63,7 @@
 
 | Attributes | Usage |
 | ------ | ------ |
-| app:backgroundTintNavigation | LiquidTabBar background color |
+| app:backgroundTintNavigation | Liquid Navbar background color |
 
 
 ### Requirements
