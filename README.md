@@ -71,7 +71,7 @@
 * minSdkVersion >= 21
 * Androidx
 
-# LICENSE
+## LICENSE!
 Copyright (c) 2021 MindInventory
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
