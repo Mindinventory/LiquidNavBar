@@ -1,0 +1,67 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.github.dcendents.android-maven'
+
+android {
+    compileSdkVersion 30
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildFeatures {
+        dataBinding true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "tyrantgit:explosionfield:1.0.1"
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.7.0-alpha01'
+    api 'com.google.android.material:material:1.4.0'
+}
+
+buildscript {
+    ext.kotlin_version = '1.5.21'
+    repositories {
+        jcenter()
+        mavenCentral()
+
+        maven { url "https://jitpack.io" }
+    }
+
+}
+//afterEvaluate{
+//    publishing{
+//        publications{
+//            release(MavenPublication){
+//                from components.release
+//            }
+//        }
+//    }
+//}
+
+

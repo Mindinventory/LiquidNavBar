@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LiquidNavBar</string>
+    <string name="enable_debug">draw debug</string>
+    <string name="add_item">add item</string>
+    <string name="remove_item">remove item</string>
+    <string name="value_dp">%ddp</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="liquidnavbar">Liquid Navbar</string>
+</resources>

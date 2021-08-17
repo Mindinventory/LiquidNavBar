@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LiquidTabBarView">
+        <attr name="backgroundTint" format="color" />
+        <attr name="liquidTabItemRadius" format="dimension" />
+        <attr name="liquidTabVerticalOffset" format="dimension" />
+        <attr name="liquidTabCornerRadius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomBottomNavigationView">
+        <attr name="backgroundTintNavigation" format="color" />
+        <attr name="menu" format="reference" />
+    </declare-styleable>
+</resources>
