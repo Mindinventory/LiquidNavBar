@@ -66,23 +66,23 @@ class LiquidNavBarView : BottomNavigationView, NavigationBarView.OnItemSelectedL
         defStyleAttr
     ) {
 
-        val a = resources.obtainAttributes(attrs, R.styleable.LiquidTabBarView)
+        val a = resources.obtainAttributes(attrs, R.styleable.LiquidNavbarView)
 
         val typedValue = TypedValue()
         context.theme?.resolveAttribute(R.attr.colorPrimary, typedValue, true)
         val backgroundTint =
-            a.getColor(R.styleable.LiquidTabBarView_backgroundTint, typedValue.data)
+            a.getColor(R.styleable.LiquidNavbarView_backgroundTint, typedValue.data)
 
         val liquidNavbarItemRadius = a.getDimensionPixelSize(
-            R.styleable.LiquidTabBarView_liquidNavbarItemRadius,
+            R.styleable.LiquidNavbarView_liquidNavbarItemRadius,
             dpToPx(64f).toInt()
         ).toFloat()
         val liquidNavbarVerticalOffset = a.getDimensionPixelSize(
-            R.styleable.LiquidTabBarView_liquidNavbarVerticalOffset,
+            R.styleable.LiquidNavbarView_liquidNavbarVerticalOffset,
             dpToPx(8f).toInt()
         ).toFloat()
         val liquidNavbarCornerRadius = a.getDimensionPixelSize(
-            R.styleable.LiquidTabBarView_liquidNavbarCornerRadius,
+            R.styleable.LiquidNavbarView_liquidNavbarCornerRadius,
             dpToPx(128f).toInt()
         ).toFloat()
         a.recycle()

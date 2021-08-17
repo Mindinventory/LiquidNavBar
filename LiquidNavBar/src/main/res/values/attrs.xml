@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="LiquidTabBarView">
+    <declare-styleable name="LiquidNavbarView">
         <attr name="backgroundTint" format="color" />
         <attr name="liquidNavbarItemRadius" format="dimension" />
         <attr name="liquidNavbarVerticalOffset" format="dimension" />
