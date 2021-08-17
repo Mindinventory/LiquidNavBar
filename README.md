@@ -2,15 +2,15 @@
 
 * LiquidNavBar Provides a bottom navigation view with liquid animation.
 
-    ![ezgif.com-gif-maker__3_](/uploads/1fcc9d33d37e509b0adb34f61f2d274f/ezgif.com-gif-maker__3_.gif)
+  ![ezgif.com-gif-maker__3_](/media/LiquidNavbarGif.gif)
 
 # Usage
 
 ### Dependencies
 
 * Step 1. Add the JitPack repository to your build file
-    
-    Add it in your root build.gradle at the end of repositories:
+
+  Add it in your root build.gradle at the end of repositories:
 
     ```groovy
 	    allprojects {
