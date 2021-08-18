@@ -2,14 +2,13 @@ package com.mindinventory.liquidnavbarsample
 
 import android.view.View
 
-class ThirdFragment : BaseFragment() {
+class GalleryFragment : BaseFragment() {
     override fun initRes(): Int {
-        return R.layout.fragment_third
+        return R.layout.fragment_gallery
     }
 
     override fun initView(view: View) {
 
     }
-
 
 }

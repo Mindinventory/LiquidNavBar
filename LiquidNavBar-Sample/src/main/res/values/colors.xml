@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <!--  <color name="colorRoyal">#c85b83</color>-->
-  <!--  <color name="colorPrimary">#f6386c</color>-->
-  <!--  <color name="colorPrimaryDark">#f6386c</color>-->
-  <!--  <color name="bg">#CDF1688E</color>-->
-  <!--  <color name="colorAccent">#f6b76a</color>-->
-  <!--  <color name="colorViolet">#ffffff</color>-->
-  <!--  <color name="iconColor">#f6386c</color>-->
 
   <color name="colorPrimary">#FA676A</color>
   <color name="colorPrimaryDark">#F13337</color>

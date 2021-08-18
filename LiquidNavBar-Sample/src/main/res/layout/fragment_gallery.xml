@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SecondFragment"
+    tools:context=".GalleryFragment"
     android:background="@color/bg"
     android:orientation="vertical"
     android:paddingTop="4dp">
@@ -35,7 +35,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="400dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/one" />
+                        android:src="@drawable/five" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -49,7 +49,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="400dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/three" />
+                        android:src="@drawable/six" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -63,7 +63,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="400dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/six" />
+                        android:src="@drawable/three" />
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
 
@@ -113,7 +113,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="300dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/five" />
+                        android:src="@drawable/one" />
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
         </LinearLayout>

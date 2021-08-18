@@ -2,7 +2,7 @@
 
 * Liquid Navbar Provides a bottom navigation view with liquid animation.
 
-  ![ezgif.com-gif-maker__3_](/media/LiquidNavbarGif.gif)
+  ![ezgif.com-gif-maker__3_](/media/features.gif)
 
 # Usage
 
@@ -15,7 +15,6 @@
     ```groovy
 	    allprojects {
 		    repositories {
-			    ...
 			    maven { url 'https://jitpack.io' }
 		    }
 	    }
@@ -23,10 +22,10 @@
 * Step 2. Add the dependency
     
     Add it in your app module build.gradle:
-    
+
     ```groovy
         dependencies {
-            ...
+            
             
         }
     ``` 
@@ -37,34 +36,48 @@
 
 ```xml
 
-<com.mindinventory.liquidnavbar.LiquidNavBar 
-        android:id="@+id/bottomNavigationView"
+<com.mindinventory.liquidnavbar.ui.LiquidNavBar android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:backgroundTintNavigation="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/menu_bottom_navigation" />
 ```
-* Step 2. Add this Line to your fragment for circular reveal animation in fragment transition.
 
-    > view.startCircularReveal()
+* Step 2. Provide fragment's parent view and implement animation listener
 
 ```kotlin 
-   .....
+  bottomNavigationView.setAnimationListener(container, object : ViewAnimationListener {
+  override fun onAnimationStart(animation: Animation?) {
 
-        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-            super.onViewCreated(view, savedInstanceState)
-            view.startCircularReveal()
+            }
 
-        }
+            override fun onAnimationEnd(animation: Animation?, fragment: Fragment?) {
+                fragment?.let { changeFragment(it) }
+            }
 
-    .....
- ```           
+
+            override fun onAnimationRepeat(animation: Animation?) {
+
+            }
+        })
+ ```         
+
+* Step 3. Implement navigation listener
+
+```kotlin 
+  bottomNavigationView.setNavigationListener(object :
+            LiquidNavBar.OnNavigationItemSelectListener {
+            override fun onNavigationItemSelected(indexOfItemSelected: Int): Boolean {
+                return true
+            }
+
+        })
+ ```         
 
 | Attributes | Usage |
 | ------ | ------ |
 | app:backgroundTintNavigation | Liquid Navbar background color |
-
 
 ### Requirements
 

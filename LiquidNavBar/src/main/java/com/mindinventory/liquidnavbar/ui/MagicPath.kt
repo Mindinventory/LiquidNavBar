@@ -1,6 +1,7 @@
-package com.mindinventory.liquidnavbar
+package com.mindinventory.liquidnavbar.ui
 
 import com.google.android.material.shape.ShapePath
+import com.mindinventory.liquidnavbar.utils.GeometryUtils
 import java.util.*
 import kotlin.math.sqrt
 
@@ -112,15 +113,19 @@ class MagicPath private constructor(
         return tangentsOfLastPointToCircle[if (circle.pathDirection == PathDirection.C_CLOCKWISE) 0 else 1]
     }
 
-    private fun getLineToCircle(px: Float, py: Float,
-                                circle: CircleShape): Pair<Double, Double> {
+    private fun getLineToCircle(
+        px: Float, py: Float,
+        circle: CircleShape
+    ): Pair<Double, Double> {
         val tangentsOfPointToCircle = GeometryUtils.getTangentsOfPointToCircle(
             px.toDouble(),
             py.toDouble(),
             circle.centerX.toDouble(),
             circle.centerY.toDouble(),
-            circle.radius.toDouble())
-        val tangentOfPointToCircle = tangentsOfPointToCircle[if (circle.pathDirection == PathDirection.CLOCKWISE) 0 else 1]
+            circle.radius.toDouble()
+        )
+        val tangentOfPointToCircle =
+            tangentsOfPointToCircle[if (circle.pathDirection == PathDirection.CLOCKWISE) 0 else 1]
 
         val tPx = tangentOfPointToCircle[2]
         val tPy = tangentOfPointToCircle[3]

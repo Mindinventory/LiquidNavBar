@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/bg"
     android:orientation="vertical"
-    android:padding="15dp"
-    tools:context=".FourFragment">
+    android:padding="@dimen/_12sdp"
+    tools:context=".SettingFragment">
 
     <TextView
         android:id="@+id/tvNotification"
@@ -16,7 +16,7 @@
         android:layout_gravity="center_vertical"
         android:text="@string/notification"
         android:textColor="@android:color/black"
-        android:textSize="14sp"
+        android:textSize="@dimen/_14ssp"
         app:layout_constraintBottom_toBottomOf="@+id/switchNotification"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/switchNotification" />
@@ -38,7 +38,7 @@
         android:layout_gravity="center_vertical"
         android:text="@string/privacy"
         android:textColor="@android:color/black"
-        android:textSize="14sp"
+        android:textSize="@dimen/_14ssp"
         app:layout_constraintBottom_toBottomOf="@+id/switchPrivacy"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/switchPrivacy" />
@@ -59,7 +59,7 @@
         android:layout_gravity="center_vertical"
         android:text="@string/ads"
         android:textColor="@android:color/black"
-        android:textSize="14sp"
+        android:textSize="@dimen/_14ssp"
         app:layout_constraintBottom_toBottomOf="@+id/switchAds"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/switchAds" />
@@ -80,7 +80,7 @@
         android:layout_gravity="center_vertical"
         android:text="@string/dark_mode"
         android:textColor="@android:color/black"
-        android:textSize="14sp"
+        android:textSize="@dimen/_14ssp"
         app:layout_constraintBottom_toBottomOf="@+id/switchMode"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/switchMode" />
@@ -93,16 +93,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchAds"
         app:thumbTint="@color/colorPrimary" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginTop="5dp"
-        android:text="@string/logout"
-        android:textColor="@android:color/black"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchMode" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

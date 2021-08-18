@@ -1,4 +1,4 @@
-package com.mindinventory.liquidnavbar
+package com.mindinventory.liquidnavbar.ui
 
 import android.animation.ValueAnimator
 import android.content.Context
@@ -12,9 +12,11 @@ import android.view.animation.DecelerateInterpolator
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
-import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.shape.ShapeAppearanceModel
+import com.mindinventory.liquidnavbar.R
+import com.mindinventory.liquidnavbar.listener.AnimationListener
+
 
 class LiquidNavBarView : BottomNavigationView, NavigationBarView.OnItemSelectedListener {
     private val height: Float
@@ -86,6 +88,7 @@ class LiquidNavBarView : BottomNavigationView, NavigationBarView.OnItemSelectedL
 
         bottomNavigationMenuView = getChildAt(0) as BottomNavigationMenuView
 
+
         topEdgeTreatment = LiquidNavBarViewDraw(
             bottomNavigationMenuView,
             liquidNavbarItemRadius,
@@ -98,14 +101,24 @@ class LiquidNavBarView : BottomNavigationView, NavigationBarView.OnItemSelectedL
         this.liquidNavbarCornerRadius = liquidNavbarCornerRadius
 
         val shapePathModel =
-            ShapeAppearanceModel().toBuilder().setAllCorners(CornerFamily.ROUNDED, 30f)
+            ShapeAppearanceModel().toBuilder()
                 .setTopEdge(topEdgeTreatment).build()
+
 
         materialShapeDrawable = MaterialShapeDrawable(shapePathModel)
         materialShapeDrawable.shadowCompatibilityMode
         materialShapeDrawable.paintStyle = Style.FILL
+
         materialShapeDrawable.setTint(backgroundTint)
+
         background = materialShapeDrawable
+
+//        bottomNavigationMenuView.setBackgroundResource(R.drawable.bg_main)
+//        (bottomNavigationMenuView.background as MaterialShapeDrawable).shapeAppearanceModel =
+//            (bottomNavigationMenuView.background as MaterialShapeDrawable).shapeAppearanceModel
+//                .toBuilder()
+//                .setTopEdge(topEdgeTreatment)
+//                .build()
 
         val menuParams = bottomNavigationMenuView.layoutParams as LayoutParams
         menuParams.gravity = (Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL)
