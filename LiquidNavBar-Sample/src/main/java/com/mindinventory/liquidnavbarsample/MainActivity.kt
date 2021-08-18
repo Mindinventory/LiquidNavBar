@@ -1,6 +1,7 @@
 package com.mindinventory.liquidnavbarsample
 
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.animation.Animation
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity(), LiquidNavBar.OnNavigationItemSelectLis
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         bottomNavigationView.setAnimationListener(container, object : ViewAnimationListener {
             override fun onAnimationStart(animation: Animation?) {
 
@@ -34,6 +36,7 @@ class MainActivity : AppCompatActivity(), LiquidNavBar.OnNavigationItemSelectLis
         })
         bottomNavigationView.setNavigationListener(this)
         changeFragment(FeedFragment())
+        tvLabel.text = getString(R.string.feed)
     }
 
     private fun changeFragment(fragment: Fragment) {
@@ -41,29 +44,35 @@ class MainActivity : AppCompatActivity(), LiquidNavBar.OnNavigationItemSelectLis
         transaction.replace(R.id.container, fragment).commit()
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onNavigationItemSelected(indexOfItemSelected: Int): Boolean {
         when (indexOfItemSelected) {
             0 -> {
                 if (indexOfItemSelected != selectedItemId) {
                     bottomNavigationView.zoomOut(FeedFragment())
+                    tvLabel.text = getString(R.string.feed)
                     selectedItemId = indexOfItemSelected
+
                 }
             }
             1 -> {
                 if (indexOfItemSelected != selectedItemId) {
                     bottomNavigationView.zoomOut(GalleryFragment())
+                    tvLabel.text = getString(R.string.gallery)
                     selectedItemId = indexOfItemSelected
                 }
             }
             2 -> {
                 if (indexOfItemSelected != selectedItemId) {
                     bottomNavigationView.zoomOut(FavoriteFragment())
+                    tvLabel.text = getString(R.string.favorite)
                     selectedItemId = indexOfItemSelected
                 }
             }
             3 -> {
                 if (indexOfItemSelected != selectedItemId) {
                     bottomNavigationView.zoomOut(SettingFragment())
+                    tvLabel.text = getString(R.string.settings)
                     selectedItemId = indexOfItemSelected
                 }
             }

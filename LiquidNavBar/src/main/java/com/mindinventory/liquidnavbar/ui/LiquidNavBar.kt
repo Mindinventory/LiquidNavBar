@@ -83,18 +83,13 @@ class LiquidNavBar(context: Context, attrs: AttributeSet?) :
 
         aniSlideTab.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation?) {
-
             }
-
             override fun onAnimationEnd(animation: Animation?) {
                 zoomInTab()
             }
-
             override fun onAnimationRepeat(animation: Animation?) {
-
             }
         })
-
         this.startAnimation(aniSlideTab)
     }
 

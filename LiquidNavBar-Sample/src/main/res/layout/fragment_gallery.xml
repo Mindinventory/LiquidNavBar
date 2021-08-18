@@ -7,7 +7,7 @@
     tools:context=".GalleryFragment"
     android:background="@color/bg"
     android:orientation="vertical"
-    android:paddingTop="4dp">
+    android:padding="@dimen/_12sdp">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -15,12 +15,13 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:baselineAligned="false">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginStart="12dp"
+
                 android:layout_marginEnd="6dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
@@ -35,7 +36,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="400dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/five" />
+                        android:src="@drawable/five"
+                        tools:ignore="ContentDescription" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -46,6 +48,7 @@
 
                     <ImageView
                         android:id="@+id/three"
+                        tools:ignore="ContentDescription"
                         android:layout_width="match_parent"
                         android:layout_height="400dp"
                         android:scaleType="fitXY"
@@ -59,6 +62,7 @@
                     app:cardCornerRadius="10dp">
 
                     <ImageView
+                        tools:ignore="ContentDescription"
                         android:id="@+id/six"
                         android:layout_width="match_parent"
                         android:layout_height="400dp"
@@ -71,7 +75,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="6dp"
-                android:layout_marginEnd="12dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
@@ -81,6 +84,7 @@
                     app:cardCornerRadius="10dp">
 
                     <ImageView
+                        tools:ignore="ContentDescription"
                         android:id="@+id/one"
                         android:layout_width="match_parent"
                         android:layout_height="300dp"
@@ -95,6 +99,7 @@
                     app:cardCornerRadius="10dp">
 
                     <ImageView
+                        tools:ignore="ContentDescription"
                         android:id="@+id/four"
                         android:layout_width="match_parent"
                         android:layout_height="300dp"
@@ -109,6 +114,7 @@
                     app:cardCornerRadius="10dp">
 
                     <ImageView
+                        tools:ignore="ContentDescription"
                         android:id="@+id/five"
                         android:layout_width="match_parent"
                         android:layout_height="300dp"
@@ -118,6 +124,4 @@
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-
-
 </LinearLayout>

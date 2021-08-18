@@ -113,13 +113,6 @@ class LiquidNavBarView : BottomNavigationView, NavigationBarView.OnItemSelectedL
 
         background = materialShapeDrawable
 
-//        bottomNavigationMenuView.setBackgroundResource(R.drawable.bg_main)
-//        (bottomNavigationMenuView.background as MaterialShapeDrawable).shapeAppearanceModel =
-//            (bottomNavigationMenuView.background as MaterialShapeDrawable).shapeAppearanceModel
-//                .toBuilder()
-//                .setTopEdge(topEdgeTreatment)
-//                .build()
-
         val menuParams = bottomNavigationMenuView.layoutParams as LayoutParams
         menuParams.gravity = (Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL)
 
