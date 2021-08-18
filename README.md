@@ -32,19 +32,43 @@
 
 ### Implementation
 
-* Step 1. Add Liquid Navbar in to your activity_main.xml:
+* Step 1. Create Menu file("menu_bottom_navigation") with menu items.
+
+    ```xml
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/home"
+            android:title="@string/feed" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_gallery"
+            android:title="@string/gallery" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_favorite"
+            android:title="@string/favorite" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_setting"
+            android:title="@string/settings" />
+    </group>
+
+</menu>
+```
+
+* Step 2. Add Liquid Navbar in to your activity_main.xml:
 
 ```xml
 
 <com.mindinventory.liquidnavbar.ui.LiquidNavBar android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:backgroundTintNavigation="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/menu_bottom_navigation" />
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    app:backgroundTintNavigation="@color/colorPrimary"
+    app:layout_constraintBottom_toBottomOf="parent" app:menu="@menu/menu_bottom_navigation" />
 ```
 
-* Step 2. Provide fragment's parent view and implement animation listener
+* Step 3. Provide fragment's parent view and implement animation listener
 
 ```kotlin 
   bottomNavigationView.setAnimationListener(container, object : ViewAnimationListener {
@@ -63,7 +87,7 @@
         })
  ```         
 
-* Step 3. Implement navigation listener
+* Step 4. Implement navigation listener
 
 ```kotlin 
   bottomNavigationView.setNavigationListener(object :
@@ -73,7 +97,7 @@
             }
 
         })
- ```         
+ ```           
 
 | Attributes | Usage |
 | ------ | ------ |
