@@ -1,6 +1,6 @@
-# Liquid Navbar
+# Liquid NavBar
 
-* Liquid Navbar Provides a bottom navigation view with liquid animation.
+* Liquid NavBar Provides a bottom navigation view with liquid animation.
 
   ![ezgif.com-gif-maker__3_](/media/feature.gif)
 
@@ -39,9 +39,9 @@
 
 ### Implementation
 
-* Step 1. Create Menu file("menu_bottom_navigation") with menu items.
+* Step 1. Create menu file("menu_bottom_navigation") with menu items.
 
-    ```xml
+```xml
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
@@ -65,15 +65,17 @@
 
 </menu>
 ```
-
-* Step 2. Add Liquid Navbar in to your activity_main.xml:
+* Step 2. Add LiquidNavBar view in to your activity_main.xml:
 
 ```xml
 
-<com.mindinventory.liquidnavbar.ui.LiquidNavBar android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent" android:layout_height="match_parent"
+<com.mindinventory.liquidnavbar.ui.LiquidNavBar 
+	android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent" 
+	android:layout_height="match_parent"
         app:backgroundTintNavigation="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent" app:menu="@menu/menu_bottom_navigation" />
+        app:layout_constraintBottom_toBottomOf="parent" 
+	app:menu="@menu/menu_bottom_navigation" />
 ```
 
 * Step 3. Provide fragment's parent view and implement animation listener
