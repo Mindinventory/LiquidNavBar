@@ -36,7 +36,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="400dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/five"
+                        android:src="@drawable/gallery1"
                         tools:ignore="ContentDescription" />
                 </androidx.cardview.widget.CardView>
 
@@ -52,7 +52,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="400dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/six" />
+                        android:src="@drawable/gallery2" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -89,7 +89,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="300dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/two" />
+                        android:src="@drawable/gallery3" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -104,7 +104,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="300dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/four" />
+                        android:src="@drawable/gallery4" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView

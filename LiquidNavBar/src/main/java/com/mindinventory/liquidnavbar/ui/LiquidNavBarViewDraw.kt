@@ -26,6 +26,7 @@ class LiquidNavBarViewDraw(
         interpolation: Float,
         shapePath: ShapePath
     ) {
+
         magicPath =
             MagicPath.create(0f, liquidNavbarVerticalOffset, length, liquidNavbarVerticalOffset)
 

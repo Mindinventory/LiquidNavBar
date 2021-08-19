@@ -15,7 +15,11 @@
     ```groovy
 	    allprojects {
 		    repositories {
+                ...
+  
 			    maven { url 'https://jitpack.io' }
+  
+                ...
 		    }
 	    }
     ``` 
@@ -25,7 +29,11 @@
 
     ```groovy
         dependencies {
+            ...
+  
             implementation 'com.github.Mindinventory:LiquidNavBar:0.0.1'
+  
+            ...
         }
     ``` 
 

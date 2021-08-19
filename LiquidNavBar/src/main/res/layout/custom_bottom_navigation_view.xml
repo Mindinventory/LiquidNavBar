@@ -19,9 +19,9 @@
             app:itemBackground="@android:color/transparent"
             app:labelVisibilityMode="selected"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:liquidNavbarCornerRadius="40dp"
-            app:liquidNavbarItemRadius="20dp"
-            app:liquidNavbarVerticalOffset="104dp" />
+            app:liquidNavbarCornerRadius="@dimen/dimen_40dp"
+            app:liquidNavbarItemRadius="@dimen/dimen_20dp"
+            app:liquidNavbarVerticalOffset="@dimen/dimen_104dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
