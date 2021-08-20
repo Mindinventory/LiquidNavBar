@@ -1,4 +1,4 @@
-package com.mindinventory.liquidnavbar
+package com.mindinventory.liquidnavbar.ui
 
 import android.graphics.Rect
 import android.view.View
@@ -26,13 +26,12 @@ class LiquidNavBarViewDraw(
         interpolation: Float,
         shapePath: ShapePath
     ) {
+
         magicPath =
             MagicPath.create(0f, liquidNavbarVerticalOffset, length, liquidNavbarVerticalOffset)
 
         bottomNavigationMenuView.forEachIndexed { i, view ->
             var liquidTabHeightOffset = 0f
-
-
             if (i == selectedItem) {
                 liquidTabHeightOffset = interpolation * liquidNavbarVerticalOffset
             }

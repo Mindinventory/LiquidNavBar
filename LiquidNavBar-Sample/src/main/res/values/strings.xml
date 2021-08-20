@@ -4,6 +4,23 @@
     <string name="add_item">add item</string>
     <string name="remove_item">remove item</string>
     <string name="value_dp">%ddp</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="liquidnavbar">Liquid Navbar</string>
+    <string name="notification">Notification</string>
+    <string name="privacy">Privacy</string>
+    <string name="ads">Ads</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="logout">Logout</string>
+    <string name="john_anderson">John Anderson</string>
+    <string name="california">California</string>
+    <string name="aris_paul">Aris Paul</string>
+    <string name="james_bond">James Bond</string>
+    <string name="england">England</string>
+    <string name="argentina">Argentina</string>
+    <string name="follow">Follow</string>
+    <string name="following">Following</string>
+    <string name="gallery">Gallery</string>
+    <string name="favorite">Favorite</string>
+    <string name="settings">Settings</string>
+    <string name="feed">Home</string>
+
 </resources>

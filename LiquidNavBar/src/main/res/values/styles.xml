@@ -15,6 +15,7 @@
     <style name="TextAppearance.BottomNavigation.Overline" parent="TextAppearance.MaterialComponents.Overline">
         <item name="fontWeight">400</item>
         <item name="android:textStyle">bold</item>
+        <item name="textAllCaps">false</item>
         <item name="android:textSize">8sp</item>
     </style>
 </resources>

@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,23 +12,25 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:padding="15dp"
+        android:padding="@dimen/_12sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/tvLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/liquidnavbar"
             android:textColor="@android:color/white"
-            android:textSize="22sp"
+            android:textSize="@dimen/_18ssp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/ivNotification"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -39,14 +41,14 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
-        android:id="@+id/frame1"
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="58dp"
         app:layout_constraintBottom_toBottomOf="@id/bottomNavigationView"
         app:layout_constraintTop_toBottomOf="@+id/clHeader" />
 
-    <com.mindinventory.liquidnavbar.LiquidNavBar
+    <com.mindinventory.liquidnavbar.ui.LiquidNavBar
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

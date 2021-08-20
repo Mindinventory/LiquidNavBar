@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -10,40 +11,42 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.mindinventory.liquidnavbar.LiquidNavBarView
+        <com.mindinventory.liquidnavbar.ui.LiquidNavBarView
             android:id="@+id/bottomNavigationView"
             style="@style/BottomNavigationView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:labelVisibilityMode="selected"
             app:itemBackground="@android:color/transparent"
+            app:labelVisibilityMode="selected"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:liquidNavbarCornerRadius="40dp"
-            app:liquidNavbarItemRadius="20dp"
-            app:liquidNavbarVerticalOffset="104dp" />
+            app:liquidNavbarCornerRadius="@dimen/dimen_40dp"
+            app:liquidNavbarItemRadius="@dimen/dimen_20dp"
+            app:liquidNavbarVerticalOffset="@dimen/dimen_104dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginBottom="19dp"
             android:elevation="25dp"
             android:gravity="bottom"
-            android:layout_marginBottom="19dp"
-            app:layout_constraintTop_toTopOf="@id/bottomNavigationView"
-            app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView">
+            app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
+            app:layout_constraintTop_toTopOf="@id/bottomNavigationView">
 
             <ImageView
                 android:id="@+id/icon1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:visibility="gone" />
+                android:visibility="gone"
+                tools:ignore="ContentDescription" />
 
             <ImageView
                 android:id="@+id/icon2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:visibility="gone" />
+                android:visibility="gone"
+                tools:ignore="ContentDescription" />
 
             <ImageView
                 android:id="@+id/icon3"
@@ -51,7 +54,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:elevation="25dp"
-                android:visibility="gone" />
+                android:visibility="gone"
+                tools:ignore="ContentDescription" />
 
             <ImageView
                 android:id="@+id/icon4"
@@ -59,7 +63,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:elevation="25dp"
-                android:visibility="gone" />
+                android:visibility="gone"
+                tools:ignore="ContentDescription" />
 
             <ImageView
                 android:id="@+id/icon5"
@@ -67,11 +72,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:elevation="25dp"
-                android:visibility="gone" />
-
+                android:visibility="gone"
+                tools:ignore="ContentDescription" />
 
         </LinearLayout>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,4 +1,4 @@
-package com.mindinventory.liquidnavbar
+package com.mindinventory.liquidnavbar.utils
 
 
 import kotlin.math.*

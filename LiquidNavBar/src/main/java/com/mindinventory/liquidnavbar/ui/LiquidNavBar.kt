@@ -1,12 +1,18 @@
-package com.mindinventory.liquidnavbar
+package com.mindinventory.liquidnavbar.ui
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.Fragment
+import com.mindinventory.liquidnavbar.R
 import com.mindinventory.liquidnavbar.databinding.CustomBottomNavigationViewBinding
+import com.mindinventory.liquidnavbar.listener.AnimationListener
+import com.mindinventory.liquidnavbar.listener.ViewAnimationListener
 
 @SuppressLint("CustomViewStyleable")
 class LiquidNavBar(context: Context, attrs: AttributeSet?) :
@@ -14,8 +20,9 @@ class LiquidNavBar(context: Context, attrs: AttributeSet?) :
     AnimationListener {
 
     private var binding: CustomBottomNavigationViewBinding? = null
-
     private var onNavigationItemSelectListener: OnNavigationItemSelectListener? = null
+    private var viewAnimationListener: ViewAnimationListener? = null
+    private var view: View? = null
 
     init {
         binding =
@@ -39,6 +46,62 @@ class LiquidNavBar(context: Context, attrs: AttributeSet?) :
         attributes.recycle()
         menuItem()
 
+    }
+
+    fun setAnimationListener(view: View?, viewAnimationListener: ViewAnimationListener?) {
+        this.view = view
+        this.viewAnimationListener = viewAnimationListener
+    }
+
+    fun zoomOut(fragment: Fragment) {
+        zoomOutTab()
+
+        val aniSlide: Animation =
+            AnimationUtils.loadAnimation(context, R.anim.expand_out)
+
+        aniSlide.setAnimationListener(object : Animation.AnimationListener {
+            override fun onAnimationStart(animation: Animation?) {
+                viewAnimationListener?.onAnimationStart(animation)
+            }
+
+            override fun onAnimationEnd(animation: Animation?) {
+                viewAnimationListener?.onAnimationEnd(animation, fragment)
+                zoomIn()
+            }
+
+            override fun onAnimationRepeat(animation: Animation?) {
+
+            }
+        })
+        view?.startAnimation(aniSlide)
+    }
+
+    private fun zoomOutTab() {
+        val aniSlideTab: Animation =
+            AnimationUtils.loadAnimation(context, R.anim.expand_out_tab)
+
+        aniSlideTab.setAnimationListener(object : Animation.AnimationListener {
+            override fun onAnimationStart(animation: Animation?) {
+            }
+            override fun onAnimationEnd(animation: Animation?) {
+                zoomInTab()
+            }
+            override fun onAnimationRepeat(animation: Animation?) {
+            }
+        })
+        this.startAnimation(aniSlideTab)
+    }
+
+    private fun zoomIn() {
+        val aniSlide: Animation =
+            AnimationUtils.loadAnimation(context, R.anim.expand_in)
+        view?.startAnimation(aniSlide)
+    }
+
+    private fun zoomInTab() {
+        val aniSlide: Animation =
+            AnimationUtils.loadAnimation(context, R.anim.expand_in_tab)
+        this.startAnimation(aniSlide)
     }
 
     //navigation listener for LiquidNavBar
@@ -87,6 +150,9 @@ class LiquidNavBar(context: Context, attrs: AttributeSet?) :
                     binding!!.icon4.visibility = View.VISIBLE
                     binding!!.icon5.visibility = View.VISIBLE
                 }
+                else -> {
+
+                }
 
             }
         }
@@ -98,23 +164,23 @@ class LiquidNavBar(context: Context, attrs: AttributeSet?) :
         when (position) {
             0 -> {
                 binding!!.icon1.translationY =
-                    (-binding!!.bottomNavigationView.liquidNavbarVerticalOffset * value) - 19f
+                    (-binding!!.bottomNavigationView.liquidNavbarVerticalOffset * value)
             }
             1 -> {
                 binding!!.icon2.translationY =
-                    (-binding!!.bottomNavigationView.liquidNavbarVerticalOffset * value) - 19f
+                    (-binding!!.bottomNavigationView.liquidNavbarVerticalOffset * value)
             }
             2 -> {
                 binding!!.icon3.translationY =
-                    (-binding!!.bottomNavigationView.liquidNavbarVerticalOffset * value) - 19f
+                    (-binding!!.bottomNavigationView.liquidNavbarVerticalOffset * value)
             }
             3 -> {
                 binding!!.icon4.translationY =
-                    (-binding!!.bottomNavigationView.liquidNavbarVerticalOffset * value) - 19f
+                    (-binding!!.bottomNavigationView.liquidNavbarVerticalOffset * value)
             }
             4 -> {
                 binding!!.icon5.translationY =
-                    (-binding!!.bottomNavigationView.liquidNavbarVerticalOffset * value) - 19f
+                    (-binding!!.bottomNavigationView.liquidNavbarVerticalOffset * value)
             }
         }
     }

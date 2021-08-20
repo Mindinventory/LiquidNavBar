@@ -1,4 +1,4 @@
-package com.mindinventory.liquidnavbar
+package com.mindinventory.liquidnavbar.listener
 
 interface AnimationListener {
     fun onValueChange(value:Float,position:Int)

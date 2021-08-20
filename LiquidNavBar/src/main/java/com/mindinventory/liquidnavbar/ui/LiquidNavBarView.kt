@@ -1,4 +1,4 @@
-package com.mindinventory.liquidnavbar
+package com.mindinventory.liquidnavbar.ui
 
 import android.animation.ValueAnimator
 import android.content.Context
@@ -14,19 +14,16 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.shape.ShapeAppearanceModel
+import com.mindinventory.liquidnavbar.R
+import com.mindinventory.liquidnavbar.listener.AnimationListener
+
 
 class LiquidNavBarView : BottomNavigationView, NavigationBarView.OnItemSelectedListener {
-    companion object {
-        const val DOUBLE_CLICK_TIME_DELTA: Long = 800 //milliseconds
-    }
-
     private val height: Float
-    private var lastClickTime: Long = 0
     private val topEdgeTreatment: LiquidNavBarViewDraw
     private val materialShapeDrawable: MaterialShapeDrawable
-
+    private var isAnimationFinish: Boolean = true
     private var selectedItem = 0
-
     private var selectionAnimator: ValueAnimator? = null
     private var deselectAnimator: ValueAnimator? = null
 
@@ -91,6 +88,7 @@ class LiquidNavBarView : BottomNavigationView, NavigationBarView.OnItemSelectedL
 
         bottomNavigationMenuView = getChildAt(0) as BottomNavigationMenuView
 
+
         topEdgeTreatment = LiquidNavBarViewDraw(
             bottomNavigationMenuView,
             liquidNavbarItemRadius,
@@ -102,11 +100,17 @@ class LiquidNavBarView : BottomNavigationView, NavigationBarView.OnItemSelectedL
         this.liquidNavbarVerticalOffset = liquidNavbarVerticalOffset
         this.liquidNavbarCornerRadius = liquidNavbarCornerRadius
 
-        val shapePathModel = ShapeAppearanceModel().toBuilder().setTopEdge(topEdgeTreatment).build()
+        val shapePathModel =
+            ShapeAppearanceModel().toBuilder()
+                .setTopEdge(topEdgeTreatment).build()
+
+
         materialShapeDrawable = MaterialShapeDrawable(shapePathModel)
         materialShapeDrawable.shadowCompatibilityMode
         materialShapeDrawable.paintStyle = Style.FILL
+
         materialShapeDrawable.setTint(backgroundTint)
+
         background = materialShapeDrawable
 
         val menuParams = bottomNavigationMenuView.layoutParams as LayoutParams
@@ -114,19 +118,10 @@ class LiquidNavBarView : BottomNavigationView, NavigationBarView.OnItemSelectedL
 
         setOnItemSelectedListener(this)
         setOnItemSelectedListener {
-            val clickTime = System.currentTimeMillis()
-            if (clickTime - lastClickTime >= DOUBLE_CLICK_TIME_DELTA) {
-                onNavigationItemSelected(it)
-                lastClickTime = clickTime
-                true
-            } else {
-                lastClickTime = clickTime
-                false
-            }
+            onNavigationItemSelected(it)
         }
         setWillNotDraw(false)
     }
-
 
 
     var animationListener: AnimationListener? = null
@@ -137,6 +132,7 @@ class LiquidNavBarView : BottomNavigationView, NavigationBarView.OnItemSelectedL
         animationListener?.onNavigationItemSelected(indexOfItemSelected)
 
         if (indexOfItemSelected != selectedItem) {
+            isAnimationFinish = false
             topEdgeTreatment.lastSelectedItem = selectedItem
             topEdgeTreatment.selectedItem = indexOfItemSelected
             selectedItem = indexOfItemSelected
@@ -144,6 +140,8 @@ class LiquidNavBarView : BottomNavigationView, NavigationBarView.OnItemSelectedL
 
             deselectAnimator = ValueAnimator.ofFloat(1f, 0.8f, 0.6f, 0.4f, 0.2f, 0f)
             deselectAnimator?.addUpdateListener {
+                isAnimationFinish = it.animatedValue == 0f
+
                 materialShapeDrawable.interpolation = it.animatedValue as Float
                 animationListener?.onValueDown(it.animatedValue as Float, indexOfItemSelected)
 
@@ -156,8 +154,8 @@ class LiquidNavBarView : BottomNavigationView, NavigationBarView.OnItemSelectedL
                     deselectAnimator?.start()
                 }
             }
-            selectionAnimator?.duration = 600
-            deselectAnimator?.duration = 200
+            selectionAnimator?.duration = 400
+            deselectAnimator?.duration = 10
 
             selectionAnimator?.interpolator = DecelerateInterpolator()
             deselectAnimator?.interpolator = DecelerateInterpolator()
@@ -175,16 +173,13 @@ class LiquidNavBarView : BottomNavigationView, NavigationBarView.OnItemSelectedL
 
     override fun setOnItemSelectedListener(listener: OnItemSelectedListener?) {
         super.setOnItemSelectedListener {
-            val clickTime = System.currentTimeMillis()
-            if (clickTime - lastClickTime >= DOUBLE_CLICK_TIME_DELTA) {
+            if (isAnimationFinish) {
                 onNavigationItemSelected(it)
                 if (listener !is LiquidNavBarView) {
                     listener?.onNavigationItemSelected(it)
                 }
-                lastClickTime = clickTime
                 true
             } else {
-                lastClickTime = clickTime
                 false
             }
         }
