@@ -1,4 +1,7 @@
+<a href="https://www.mindinventory.com/?utm_source=gthb&utm_medium=repo&utm_campaign=liquid-nav-bar"><img src="https://github.com/Sammindinventory/MindInventory/blob/main/Banner.png"></a>
+
 # Liquid NavBar
+[![](https://jitpack.io/v/Mindinventory/LiquidNavBar.svg)](https://jitpack.io/#Mindinventory/LiquidNavBar)
 
 * Liquid NavBar Provides a bottom navigation view with liquid animation.
 
@@ -15,11 +18,9 @@
     ```groovy
 	    allprojects {
 		    repositories {
-                ...
-  
-			    maven { url 'https://jitpack.io' }
-  
-                ...
+                	...
+			maven { url 'https://jitpack.io' }
+                	...
 		    }
 	    }
     ``` 
@@ -30,9 +31,7 @@
     ```groovy
         dependencies {
             ...
-  
             implementation 'com.github.Mindinventory:LiquidNavBar:0.0.1'
-  
             ...
         }
     ``` 
@@ -121,11 +120,13 @@
 ## LICENSE!
 LiquidNavBar is [MIT-licensed](/LICENSE) 
 
-# Let us know!
+## Let us know!
 
-We’d be really happy if you send us links to your projects where you use our component. Just send an
-email to sales@mindinventory.com And do let us know if you have any questions or suggestion
-regarding our work.
+We’d be really happy if you send us links to your projects where you use our component. Just send an email to sales@mindinventory.com And do let us know if you have any questions or suggestion regarding our work.
+<p><h4>Please feel free to use this component and Let us know if you are interested to building Apps or Designing Products.</h4>
+<a href="https://www.mindinventory.com/contact-us.php?utm_source=gthb&utm_medium=repo&utm_campaign=liquid-nav-bar">
+<img src="https://github.com/Sammindinventory/MindInventory/blob/main/hirebutton.png" width="203" height="43"  alt="app development">
+</a>
 
 
 
