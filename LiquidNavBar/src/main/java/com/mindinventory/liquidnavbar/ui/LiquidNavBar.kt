@@ -3,7 +3,6 @@ package com.mindinventory.liquidnavbar.ui
 import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.animation.Animation
@@ -225,12 +224,6 @@ class LiquidNavBar(context: Context, attrs: AttributeSet?) :
 
     //onNavigation Item selected for BottomNavigation
     override fun onNavigationItemSelected(indexOfItemSelected: Int) {
-        val location = IntArray(2)
-        binding!!.icon4.getLocationInWindow(location)
-        val x = location[0]
-        val y = location[1]
-
-        Log.e("MainActivity", "X:- $x, Y:- $y")
         onNavigationItemSelectListener!!.onNavigationItemSelected(indexOfItemSelected)
 
     }
