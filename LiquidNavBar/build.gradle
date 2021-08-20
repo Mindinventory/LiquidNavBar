@@ -5,10 +5,10 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'com.github.dcendents.android-maven'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 30
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 31
+        targetSdkVersion 30
         versionCode 2
         versionName "0.0.2"
 
@@ -16,6 +16,7 @@ android {
     }
     buildFeatures {
         dataBinding true
+        viewBinding true
     }
     buildTypes {
         release {
@@ -32,11 +33,9 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation "tyrantgit:explosionfield:1.0.1"
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -47,9 +46,7 @@ dependencies {
 buildscript {
     ext.kotlin_version = '1.5.21'
     repositories {
-        jcenter()
         mavenCentral()
-
         maven { url "https://jitpack.io" }
     }
 
